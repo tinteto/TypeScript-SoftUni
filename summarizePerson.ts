@@ -5,7 +5,7 @@ function summarizeInfo(
     age: number, 
     middleName?: string, 
     hobbies?: string[], 
-    workInfo?: [string, number]) {
+    workInfo?: [string, number]) : (string | number)[] {
 
 let fullName = middleName ? `${firstName} ${middleName} ${lastName}` : `${firstName} ${lastName}`;
 
