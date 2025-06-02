@@ -1,28 +1,30 @@
 function getDate(data: unknown[]): void {
-    const months = [
-        'January', 'February', 'March', 'April', 'May', 'June',
-        'July', 'August', 'September', 'October', 'November', 'December'
-    ];
+    enum Months {
+        January, 
+        February, 
+        March, 
+        April, 
+        May, 
+        June,
+        July, 
+        August, 
+        September, 
+        October, 
+        November, 
+        December
+    };
 
-    for (let item of data) {
-        const date = new Date(item as any);
-        let isValidDate = !isNaN(date.getTime());
-      
-        if(
-            date instanceof Date && 
-            isValidDate && 
-            date.getDate() === 13 && 
-            date.getDay() === 5 
-        ) {
-                
-            const day = date.getDate();
-            const month = months[date.getMonth()];
+    for (let date of data) {
+        if(date instanceof Date) {
+            const monthDay = date.getDate();
+            const weekDay = date.getDay();
+            const monthNum = date.getMonth();
             const year = date.getFullYear();
 
-            console.log(`${day}-${month}-${year}`);
-
-        }
-    
+            if(monthDay === 13 && weekDay === 5) {
+            console.log(`${monthDay}-${Months[monthNum]}-${year}`);
+            }
+        } 
     }    
 }
 

@@ -1,6 +1,6 @@
-function convertArray(arr: string[]): [string, number] {
-let str: string = arr.join('');
-let charNum: number = str.length;
+function convertArray(arr: string[]) : [string, number] {
+let str = arr.join('');
+let charNum  = str.length;
 
 return [str, charNum];
 }

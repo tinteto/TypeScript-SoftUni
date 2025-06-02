@@ -1,20 +1,30 @@
 "use strict";
 function getDate(data) {
-    const months = [
-        'January', 'February', 'March', 'April', 'May', 'June',
-        'July', 'August', 'September', 'October', 'November', 'December'
-    ];
-    for (let item of data) {
-        const date = new Date(item);
-        let isValidDate = !isNaN(date.getTime());
-        if (date instanceof Date &&
-            isValidDate &&
-            date.getDate() === 13 &&
-            date.getDay() === 5) {
-            const day = date.getDate();
-            const month = months[date.getMonth()];
+    let Months;
+    (function (Months) {
+        Months[Months["January"] = 0] = "January";
+        Months[Months["February"] = 1] = "February";
+        Months[Months["March"] = 2] = "March";
+        Months[Months["April"] = 3] = "April";
+        Months[Months["May"] = 4] = "May";
+        Months[Months["June"] = 5] = "June";
+        Months[Months["July"] = 6] = "July";
+        Months[Months["August"] = 7] = "August";
+        Months[Months["September"] = 8] = "September";
+        Months[Months["October"] = 9] = "October";
+        Months[Months["November"] = 10] = "November";
+        Months[Months["December"] = 11] = "December";
+    })(Months || (Months = {}));
+    ;
+    for (let date of data) {
+        if (date instanceof Date) {
+            const monthDay = date.getDate();
+            const weekDay = date.getDay();
+            const monthNum = date.getMonth();
             const year = date.getFullYear();
-            console.log(`${day}-${month}-${year}`);
+            if (monthDay === 13 && weekDay === 5) {
+                console.log(`${monthDay}-${Months[monthNum]}-${year}`);
+            }
         }
     }
 }

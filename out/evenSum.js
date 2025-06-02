@@ -8,6 +8,7 @@ function evenSum(num1, num2, num3) {
     else {
         return isEven = false;
     }
+    //return sum % 2 === 0;
 }
 console.log(evenSum(2, 2, 3));
 //# sourceMappingURL=evenSum.js.map

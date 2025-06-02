@@ -1,17 +1,19 @@
-function summarizeInfo(
+function summarizeInfo
+(
     id: number, 
     firstName: string, 
     lastName: string, 
     age: number, 
     middleName?: string, 
     hobbies?: string[], 
-    workInfo?: [string, number]) : (string | number)[] {
+    workInfo?: [string, number]
+) : (string | number)[] {
 
 let fullName = middleName ? `${firstName} ${middleName} ${lastName}` : `${firstName} ${lastName}`;
 
-let hobbiesStr = hobbies ? hobbies.join(', ') : '-'
+let hobbiesStr = hobbies ? hobbies.join(', ') : '-';
 
-let workInfoStr = workInfo ?  workInfo.join(' -> ') : '-'
+let workInfoStr = workInfo ?  workInfo.join(' -> ') : '-';
 
 
 return [id, fullName, age, hobbiesStr, workInfoStr];

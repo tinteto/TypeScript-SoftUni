@@ -1,4 +1,4 @@
-enum WeekDay {
+enum Days {
     Monday = 1,
     Tuesday,
     Wednesday,
@@ -10,9 +10,11 @@ enum WeekDay {
 
 
 function getWeekDay(dayNumber: number): string {
-const day = WeekDay[dayNumber];
+
+const day = Days[dayNumber]; 
 
 return day ? day: 'Error';
+//console.log(WeekDays[dayNumber] || 'Error');
 
 }
 
