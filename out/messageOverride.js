@@ -14,9 +14,6 @@ class SMSMessage extends Message {
         return 'Sending SMS...';
     }
 }
-const messages = [new Message(),
-    new EmailMessage(), new SMSMessage()];
-messages.forEach((msg) => {
-    console.log(msg.send());
-});
+const messages = [new Message(), new EmailMessage(), new SMSMessage()];
+messages.forEach((msg) => { console.log(msg.send()); });
 //# sourceMappingURL=messageOverride.js.map
